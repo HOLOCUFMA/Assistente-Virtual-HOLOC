@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA do HOLOC</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #131314; color: #e3e3e3; height: 100vh; display: flex; }
+        
+        /* Barra lateral (Sidebar) */
+        .sidebar { width: 260px; background-color: #1e1f20; padding: 20px; display: flex; flex-direction: column; border-right: 1px solid #333; }
+        .sidebar h2 { color: #ffb703; font-size: 1.2rem; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; }
+        .new-chat-btn { background-color: #282a2c; color: #e3e3e3; border: none; padding: 12px 15px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 1rem; transition: 0.2s; display: flex; align-items: center; gap: 10px; }
+        .new-chat-btn:hover { background-color: #333538; }
+
+        /* Área Principal */
+        .main-content { flex: 1; display: flex; flex-direction: column; position: relative; }
+        .header { padding: 20px; text-align: center; font-size: 1.2rem; font-weight: bold; color: #ccc; border-bottom: 1px solid #333; background-color: #131314; }
+        
+        /* Área de Mensagens (Chat) */
+        .chat-container { flex: 1; overflow-y: auto; padding: 40px 15%; display: flex; flex-direction: column; gap: 30px; scroll-behavior: smooth; }
+        
+        .message-wrapper { display: flex; gap: 20px; width: 100%; }
+        .message-wrapper.user { flex-direction: row-reverse; }
+        
+        /* Ícones de Perfil (Avatares) */
+        .avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 1.2rem; flex-shrink: 0; }
+        .avatar.bot { background-color: #1e293b; color: #ffb703; border: 1px solid #334155; }
+        .avatar.user { background-color: #ffb703; color: #0c1017; }
+        
+        /* Textos das Mensagens */
+        .message { max-width: 85%; line-height: 1.7; font-size: 1.05rem; padding-top: 8px; }
+        .message-wrapper.user .message { background-color: #282a2c; padding: 15px 20px; border-radius: 20px; border-top-right-radius: 5px; margin-top: -8px; }
+        
+        /* Formatação das Respostas da IA */
+        .message b { color: #ffb703; }
+        .message br { margin-bottom: 8px; display: block; }
+
+        /* Área de Digitação (Input) */
+        .input-container { padding: 30px 15%; background-color: #131314; }
+        .input-box { display: flex; background-color: #1e1f20; border-radius: 30px; padding: 10px 20px; border: 1px solid #333; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .input-box:focus-within { border-color: #ffb703; background-color: #282a2c; }
+        .input-box input { flex: 1; background: transparent; border: none; color: white; font-size: 1rem; outline: none; padding: 10px; }
+        .input-box button { background-color: #ffb703; color: #131314; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-weight: bold; font-size: 1.2rem; display: flex; justify-content: center; align-items: center; transition: 0.2s; }
+        .input-box button:hover { transform: scale(1.05); background-color: #ffc83d; }
+        
+        /* Efeito "Pensando..." */
+        .loading { color: #888; font-style: italic; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Lateral -->
+    <div class="sidebar">
+        <h2>✨ IA do HOLOC</h2>
+        <button class="new-chat-btn" onclick="location.reload()">+ Novo Chat</button>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <div class="header">Assistente Virtual HOLOC</div>
+        
+        <!-- Onde as mensagens aparecem -->
+        <div class="chat-container" id="chatMessages">
+            <div class="message-wrapper">
+                <div class="avatar bot">H</div>
+                <div class="message">Olá! Sou a Inteligência Artificial do HOLOC. Como posso ajudar com os nossos projetos hoje?</div>
+            </div>
+        </div>
+
+        <!-- Barra de Digitação -->
+        <div class="input-container">
+            <div class="input-box">
+                <input type="text" id="userInput" placeholder="Digite a sua dúvida sobre os projetos..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') sendMessage();
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const messagesContainer = document.getElementById('chatMessages');
+            const text = input.value.trim();
+
+            if (text === '') return;
+
+            // 1. Cria a mensagem do utilizador (Foto Amarela, Texto na caixa escura)
+            const userWrapper = document.createElement('div');
+            userWrapper.className = 'message-wrapper user';
+            userWrapper.innerHTML = `
+                <div class="avatar user">U</div>
+                <div class="message">${text}</div>
+            `;
+            messagesContainer.appendChild(userWrapper);
+            input.value = '';
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            // 2. Cria o efeito "Pensando..." enquanto a Vercel responde
+            const botWrapper = document.createElement('div');
+            botWrapper.className = 'message-wrapper';
+            botWrapper.innerHTML = `
+                <div class="avatar bot">H</div>
+                <div class="message"><span class="loading">A pensar...</span></div>
+            `;
+            messagesContainer.appendChild(botWrapper);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            try {
+                // 3. Comunica de forma SECRETA E SEGURA com o teu servidor na Vercel (api/chat.js)
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text })
+                });
+
+                const data = await response.json();
+                
+                if (!response.ok) throw new Error(data.error || 'Erro no servidor');
+
+                // 4. Formata o texto recebido (Muda ** para negrito e hifens para tópicos)
+                const formattedText = data.reply
+                    .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
+                    .replace(/ - /g, '<br>• ')
+                    .replace(/\n/g, '<br>');
+
+                // 5. Substitui o "A pensar..." pela resposta final da IA
+                botWrapper.querySelector('.message').innerHTML = formattedText;
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            } catch (error) {
+                // Se testares direto no computador sem Vercel, dá este erro (normal)
+                botWrapper.querySelector('.message').innerHTML = `<b>Aviso:</b> Para testar, precisas de atualizar o projeto na Vercel! <br><br><span style="color:#888; font-size:0.8rem;">Detalhes: ${error.message}</span>`;
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
