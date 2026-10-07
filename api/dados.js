@@ -67,4 +67,4 @@ As Oficinas Culinárias representam uma iniciativa transformadora desenvolvida c
 Para conferir as novidades e acompanhar de perto as ações do HOLOC e de seus subprojetos no Instagram, você pode acessar as páginas da Oficinas Culinárias (@oficinas.culinarias), do QualificaTur (@qualificatur.holoc), da Remacri (@remacri.holoc), do Humaniza (@humaniza.holoc), do Joylab (@joylab.holoc), do FloreSer (@florescervida), do NUPA'S (@nupas.holoc) e do EnvelheSER (@envelheser.holoc).
 
 REGRAS RÍGIDAS: Não utilize conhecimentos externos, não invente informações e não faça buscas na internet. Se a pergunta estiver fora deste escopo, oriente o usuário a entrar em contato pelo e-mail holoc.canva@gmail.com ou pelo Instagram @holoc.ufma.
-`;s
+`;
