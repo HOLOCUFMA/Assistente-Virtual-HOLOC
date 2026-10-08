@@ -15,6 +15,11 @@ export default async function handler(req, res) {
         return res.status(500).json({ error: 'Chave da API não configurada no servidor.' });
     }
 
+    // Pega a data e a hora atuais de forma automática no servidor
+    const agora = new Date();
+    const dataAtual = agora.toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    const horaAtual = agora.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+
     const modelsToTry = ["groq/compound-mini", "groq/compound", "qwen/qwen3.8-27b"];
     let responseData = null;
     let success = false;
@@ -34,8 +39,8 @@ export default async function handler(req, res) {
                     messages: [
                         { 
                             role: "system", 
-                            // O cargo de especialista adicionado ao contexto para melhores ideias
-                            content: holocContext + "\n\nAtue como um consultor criativo e especialista em projetos de extensão universitária da UFMA. Quando o utilizador pedir ideias de ações para os projetos (como FloreSER, JoyLAB, etc.), forneça sugestões práticas, inovadoras, detalhadas e estruturadas (com público-alvo, formato e objetivos)." 
+                            // Injetamos a data e hora atuais logo no início para a IA saber exatamente o momento presente
+                            content: `Informação temporal do sistema: Hoje é ${dataAtual}, às ${horaAtual}.\n\n` + holocContext + "\n\nAtue como um consultor criativo e especialista em projetos de extensão universitária da UFMA. Quando o utilizador pedir ideias de ações para os projetos (como FloreSER, JoyLAB, etc.), forneça sugestões práticas, inovadoras, detalhadas e estruturadas (com público-alvo, formato e objetivos)." 
                         },
                         { role: "user", content: message }
                     ]
