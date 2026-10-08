@@ -15,7 +15,6 @@ export default async function handler(req, res) {
         return res.status(500).json({ error: 'Chave da API não configurada no servidor.' });
     }
 
-    // Modelos originais que garantem estabilidade e rapidez sem esgotar o limite
     const modelsToTry = ["groq/compound-mini", "groq/compound", "qwen/qwen3.8-27b"];
     let responseData = null;
     let success = false;
