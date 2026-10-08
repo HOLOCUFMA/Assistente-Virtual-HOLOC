@@ -39,7 +39,7 @@ export default async function handler(req, res) {
                     messages: [
                         { 
                             role: "system", 
-                            content: `Informação temporal do sistema: Hoje é ${dataAtual}, às ${horaAtual}.\n\n` + holocContext + "\n\nAtue como um consultor criativo e especialista em projetos de extensão universitária da UFMA. Quando o utilizador pedir ideias de ações para os projetos (como FloreSER, JoyLAB, etc.), forneça sugestões práticas, inovadoras, detalhadas e estruturadas (com público-alvo, formato e objetivos)." 
+                            content: `Informação temporal do sistema: Hoje é ${dataAtual}, às ${horaAtual}.\n\n` + holocContext + `\n\nAtue como um consultor criativo e especialista em projetos de extensão universitária da UFMA. REGRA CRUCIAL DE DATAS: Quando o utilizador pedir o 'próximo dia comemorativo' ou 'próxima data', deves analisar rigorosamente o calendário cronológico a partir de hoje (${dataAtual}) e escolher a data comemorativa ou campanha mais próxima que ocorre a seguir (em outubro, novembro, dezembro de 2026, etc.), proibindo terminantemente saltar para meses distantes (como março) a menos que explicitamente solicitado. Forneça sugestões práticas, inovadoras, detalhadas e estruturadas (com público-alvo, formato e objetivos) para essa data real mais próxima.` 
                         },
                         { role: "user", content: message }
                     ]
