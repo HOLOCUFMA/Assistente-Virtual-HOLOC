@@ -15,8 +15,8 @@ export default async function handler(req, res) {
         return res.status(500).json({ error: 'Chave da API não configurada no servidor.' });
     }
 
-    // Atualizado para usar os cérebros mais inteligentes e detalhistas da Groq
-    const modelsToTry = ["llama3-70b-8192", "llama-3.1-70b-versatile", "mixtral-8x7b-32768"];
+    // Modelos originais que garantem estabilidade e rapidez sem esgotar o limite
+    const modelsToTry = ["groq/compound-mini", "groq/compound", "qwen/qwen3.8-27b"];
     let responseData = null;
     let success = false;
 
@@ -31,11 +31,11 @@ export default async function handler(req, res) {
                 body: JSON.stringify({
                     model: modelName,
                     max_tokens: 1024,
-                    temperature: 0.7, // <-- Adicionado: Deixa a IA muito mais criativa para dar ideias
+                    temperature: 0.7, // Criatividade ativada
                     messages: [
                         { 
                             role: "system", 
-                            // <-- Adicionado: Dá o cargo de consultor criativo de extensão universitária
+                            // O cargo de especialista adicionado ao contexto para melhores ideias
                             content: holocContext + "\n\nAtue como um consultor criativo e especialista em projetos de extensão universitária da UFMA. Quando o utilizador pedir ideias de ações para os projetos (como FloreSER, JoyLAB, etc.), forneça sugestões práticas, inovadoras, detalhadas e estruturadas (com público-alvo, formato e objetivos)." 
                         },
                         { role: "user", content: message }
