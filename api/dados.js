@@ -68,8 +68,16 @@ As Oficinas Culinárias representam uma iniciativa transformadora desenvolvida c
 
 ====INSTAGRAM DOS PROJETOS========
 Para conferir as novidades e acompanhar de perto as ações do HOLOC e de seus subprojetos no Instagram, você pode acessar as páginas da Oficinas Culinárias (@oficinas.culinarias), do QualificaTur (@qualificatur.holoc), da Remacri (@remacri.holoc), do Humaniza (@humaniza.holoc), do Joylab (@joylab.holoc), do FloreSer (@florescervida), do NUPA'S (@nupas.holoc) e do EnvelheSER (@envelheser.holoc).
-=== ENDEREÇO E LOCALIZAÇÃO ===
 
+=== HISTÓRICO E INFRAESTRUTURA: FÁBRICA SANTA AMÉLIA (SEDE DO HOLOC) ===
+- Localização Oficial: Rua Cândido Ribeiro, nº 250, quadra 150, Centro – São Luís – MA.
+- Contexto Histórico: O edifício abrigou primeiramente a Companhia de Lanifícios Maranhense, instalada em 1892. Em 1902, foi arrematado por Cândido José Ribeiro e integrado à Fábrica São Luís, constituindo o “Cotonifício Cândido Ribeiro”. Funcionou por 64 anos até ser fechado em 1966, exercendo papel fundamental no processo de industrialização do Maranhão no século XIX e início do século XX.
+- Patrimônio Tombado: Tombado pelo Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN) em 1º de julho de 1987 (Processo nº 1144-T-1985, Livro do Tombo Histórico, Inscr. nº 513).
+- Características Arquitetônicas: O complexo preserva elementos originais do século XIX, como fachada simétrica com mirante revestido de azulejos portugueses, escada metálica helicoidal de origem inglesa, estruturas metálicas e acréscimos importados da Inglaterra, além de um poço e uma chaminé de tijolo refratário com cerca de 28 metros de altura.
+- Uso Atual: O conjunto é gerido pela Universidade Federal do Maranhão (UFMA), abrigando os cursos de Turismo e Hotelaria, o Hotel-Escola, unidades acadêmicas, biblioteca, auditório com capacidade para 360 lugares com cabine de tradução simultânea, Empresa Júnior de Turismo e laboratórios especializados.
+- Referência e Fontes: IPHAN / iPatrimônio (https://www.ipatrimonio.org/sao-luis-antiga-fabrica-santa-amelia/#!/map=38329&loc=-2.530924338299887,-44.29863452911377,15).
+
+=== ENDEREÇO E LOCALIZAÇÃO ===
 O HOLOC está sediado presencialmente na Fábrica Santa Amélia, espaço vinculado aos cursos de Turismo e Hotelaria da Universidade Federal do Maranhão (UFMA), localizado no Centro Histórico de São Luís.
 Link de referência de localização: https://maps.app.goo.gl/DVHvNC2byMfCeSXR9
 
