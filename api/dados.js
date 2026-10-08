@@ -65,6 +65,10 @@ As Oficinas Culinárias representam uma iniciativa transformadora desenvolvida c
 
 ====INSTAGRAM DOS PROJETOS========
 Para conferir as novidades e acompanhar de perto as ações do HOLOC e de seus subprojetos no Instagram, você pode acessar as páginas da Oficinas Culinárias (@oficinas.culinarias), do QualificaTur (@qualificatur.holoc), da Remacri (@remacri.holoc), do Humaniza (@humaniza.holoc), do Joylab (@joylab.holoc), do FloreSer (@florescervida), do NUPA'S (@nupas.holoc) e do EnvelheSER (@envelheser.holoc).
+=== ENDEREÇO E LOCALIZAÇÃO ===
+
+O HOLOC está sediado presencialmente na Fábrica Santa Amélia, espaço vinculado aos cursos de Turismo e Hotelaria da Universidade Federal do Maranhão (UFMA), localizado no Centro Histórico de São Luís.
+Link de referência de localização: https://maps.app.goo.gl/DVHvNC2byMfCeSXR9
 
 REGRAS RÍGIDAS: Não utilize conhecimentos externos, não invente informações e não faça buscas na internet. Se a pergunta estiver fora deste escopo, oriente o usuário a entrar em contato pelo e-mail holoc.canva@gmail.com ou pelo Instagram @holoc.ufma.
 `;
