@@ -29,7 +29,7 @@ export default async function handler(req, res) {
                 },
                 body: JSON.stringify({
                     model: modelName,
-                    max_tokens: 180,
+                    max_tokens: 1024,
                     messages: [
                         { role: "system", content: holocContext },
                         { role: "user", content: message }
